@@ -1,0 +1,105 @@
+ode Description – Cafe Management System using Python
+🔹 1. Define the Menu
+python
+Copy code
+menu = {
+    'coffee': 60,
+    'tea': 50,
+    'sandwich': 100,
+    'burger': 150,
+    'pizza': 200,
+    'salad': 80,
+    'pasta': 120,
+    'water bottle': 30,
+    'coke': 40,
+}
+📌 Description:
+This dictionary stores the cafe's menu items as keys and their corresponding prices as values. It allows for quick lookups during order processing.
+
+🔹 2. Display Welcome Message and Menu
+python
+Copy code
+print("Welcome to Anthena Cafe!\n vilithe nalugu matalu kudhirithe cupu coffee!")
+print("Here is the menu:")
+print("Item\tPrice")
+for item, price in menu.items():
+    print(f"{item}\t{price} Rs")
+📌 Description:
+
+Displays a friendly welcome message to the user.
+
+Iterates over the menu dictionary using a for loop and prints each item and its price in a formatted manner.
+
+🔹 3. Initialize Order Tracking Variables
+python
+Copy code
+order_total = 0
+ordered_items = []
+📌 Description:
+
+order_total: Keeps track of the total bill amount.
+
+ordered_items: A list to store the names of the items ordered by the user.
+
+🔹 4. Start Taking Orders in a Loop
+python
+Copy code
+i = 1
+while True:
+    print(f"\nOrder {i}:")
+    item = input("\nEnter the item you want to order: ").lower().strip()
+📌 Description:
+
+while True: Starts an infinite loop for taking multiple orders.
+
+i: A counter to label each order.
+
+input(): Takes item input from the user.
+
+.lower().strip(): Converts input to lowercase and removes extra spaces for accurate matching.
+
+🔹 5. Validate and Process the Order
+python
+Copy code
+    if item in menu:
+        order_total += menu[item]
+        ordered_items.append(item)
+        print(f"{item} added to your order.")
+    else:
+        print(f"Sorry, {item} is not available.")
+📌 Description:
+
+Checks if the entered item exists in the menu.
+
+If it does, the item's price is added to the total and its name is added to the list of ordered items.
+
+If not, a message is shown indicating that the item is unavailable.
+
+🔹 6. Ask to Continue or Exit
+python
+Copy code
+    another_order = input("Do you want to order another item? (yes/no): ").lower().strip()
+    i += 1
+    if another_order != 'yes':
+        break
+📌 Description:
+
+Asks the user whether they want to continue ordering.
+
+If the answer is anything other than "yes", the loop breaks and moves to bill generation.
+
+🔹 7. Generate and Display Final Bill
+python
+Copy code
+print('\n your ordered items are: ')
+for items in ordered_items:
+    print(f"- {items} ({menu[items]} Rs)")
+print(f"\nYour total bill is: {order_total} Rs")
+print("Thank you for visiting the Cafe!")
+📌 Description:
+
+Displays the list of ordered items and their respective prices.
+
+Shows the total bill based on the items ordered.
+
+Prints a thank-you message to conclude the transaction.
