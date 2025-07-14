@@ -1,4 +1,4 @@
-ode Description – Cafe Management System using Python
+code Description – Cafe Management System using Python
 🔹 1. Define the Menu
 python
 Copy code
